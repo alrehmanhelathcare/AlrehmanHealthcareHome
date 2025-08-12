@@ -827,6 +827,202 @@
             gap: 5px;
         }
 
+        /* Blog Management */
+        #blog-management {
+            padding: 80px 0;
+            background-color: #f0f8ff;
+            display: none;
+        }
+
+        .blog-management-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .management-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .management-header h2 {
+            color: var(--primary-dark);
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            background: transparent;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--gray);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-dark);
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .form-row {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input, 
+        .form-group textarea, 
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .blog-list {
+            list-style: none;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .blog-item {
+            padding: 15px;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .blog-item:last-child {
+            border-bottom: none;
+        }
+
+        .blog-item h4 {
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+
+        .blog-item-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .action-btn {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .edit-btn {
+            background-color: var(--primary-light);
+            color: white;
+        }
+
+        .delete-btn {
+            background-color: #ff6b6b;
+            color: white;
+        }
+
+        /* Blog Post View */
+        .blog-post-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            display: none;
+        }
+
+        .blog-post-header {
+            margin-bottom: 30px;
+        }
+
+        .blog-post-title {
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .blog-post-meta {
+            display: flex;
+            gap: 20px;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .blog-post-image {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .blog-post-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .back-to-blog {
+            display: inline-block;
+            margin-top: 30px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
         /* Footer */
         footer {
             background: var(--primary-dark);
@@ -960,6 +1156,12 @@
                 flex-direction: column;
                 gap: 15px;
             }
+            
+            .management-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -982,6 +1184,15 @@
             
             .urdu-notification {
                 font-size: 0.9rem;
+            }
+            
+            .blog-post-title {
+                font-size: 1.8rem;
+            }
+            
+            .blog-post-meta {
+                flex-direction: column;
+                gap: 5px;
             }
         }
     </style>
@@ -1014,6 +1225,7 @@
                 <a href="#staff-registration"><i class="fas fa-user-plus"></i> Staff Registration</a>
                 <a href="#contact"><i class="fas fa-phone-alt"></i> Contact</a>
                 <a href="#form"><i class="fas fa-calendar-check"></i> Book Service</a>
+                <a href="#" id="manage-blog"><i class="fas fa-edit"></i> Manage Blog</a>
             </nav>
         </div>
     </header>
@@ -1242,48 +1454,88 @@
                 <h2>Health & Wellness Blog</h2>
                 <p>Read our latest articles on health, wellness, and medical care</p>
             </div>
-            <div class="blog-posts">
-                <div class="blog-card">
-                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');"></div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> Aug 15, 2025</span>
-                            <span><i class="far fa-user"></i> Dr. Ayesha Khan</span>
-                        </div>
-                        <h3>Benefits of Home Nursing for Elderly Care</h3>
-                        <p class="blog-excerpt">Discover how professional home nursing can improve quality of life for elderly patients and provide peace of mind for families...</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <div class="blog-card">
-                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');"></div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> Aug 10, 2025</span>
-                            <span><i class="far fa-user"></i> Dr. Ali Raza</span>
-                        </div>
-                        <h3>Understanding Diabetes Management at Home</h3>
-                        <p class="blog-excerpt">Learn practical strategies for managing diabetes effectively with home healthcare support and monitoring techniques...</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <div class="blog-card">
-                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');"></div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> Aug 5, 2025</span>
-                            <span><i class="far fa-user"></i> Dr. Fatima Ahmed</span>
-                        </div>
-                        <h3>Post-Surgery Recovery: The Role of Home Care</h3>
-                        <p class="blog-excerpt">How professional home care services can accelerate recovery after surgery and reduce the risk of complications...</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
+            <div class="blog-posts" id="blog-posts-container">
+                <!-- Blog posts will be dynamically loaded here -->
             </div>
             <div style="text-align: center; margin-top: 40px;">
-                <a href="#" class="btn btn-primary">View All Blog Posts</a>
+                <a href="#" class="btn btn-primary" id="view-all-blogs">View All Blog Posts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Management Section -->
+    <section id="blog-management">
+        <div class="container">
+            <div class="blog-management-container">
+                <div class="management-header">
+                    <h2>Blog Management</h2>
+                    <button class="btn btn-primary" id="back-to-blog">Back to Blog</button>
+                </div>
+                
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="create">Create New Post</button>
+                    <button class="tab-btn" data-tab="manage">Manage Posts</button>
+                </div>
+                
+                <div class="tab-content active" id="create-tab">
+                    <form id="blog-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="blog-title">Blog Title</label>
+                                <input type="text" id="blog-title" placeholder="Enter blog title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="blog-author">Author</label>
+                                <input type="text" id="blog-author" placeholder="Author name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="blog-image">Image URL</label>
+                                <input type="text" id="blog-image" placeholder="Paste image URL">
+                            </div>
+                            <div class="form-group">
+                                <label for="blog-category">Category</label>
+                                <select id="blog-category">
+                                    <option value="Healthcare">Healthcare</option>
+                                    <option value="Nursing">Nursing</option>
+                                    <option value="Wellness">Wellness</option>
+                                    <option value="Prevention">Prevention</option>
+                                    <option value="Elder Care">Elder Care</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="blog-excerpt">Excerpt (Short Description)</label>
+                            <textarea id="blog-excerpt" placeholder="Enter a short description of your blog post" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="blog-content">Content</label>
+                            <textarea id="blog-content" placeholder="Write your blog content here" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Publish Blog Post</button>
+                    </form>
+                </div>
+                
+                <div class="tab-content" id="manage-tab">
+                    <h3>Your Blog Posts</h3>
+                    <ul class="blog-list" id="blog-list">
+                        <!-- Blog posts will be listed here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Post View -->
+    <section id="blog-post-view">
+        <div class="container">
+            <div class="blog-post-container" id="blog-post-container">
+                <!-- Full blog post will be displayed here -->
             </div>
         </div>
     </section>
@@ -1545,6 +1797,285 @@
     </footer>
 
     <script>
+        // Blog Management System
+        let blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [
+            {
+                id: 1,
+                title: "Benefits of Home Nursing for Elderly Care",
+                author: "Dr. Ayesha Khan",
+                date: "Aug 15, 2025",
+                category: "Healthcare",
+                image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                excerpt: "Discover how professional home nursing can improve quality of life for elderly patients and provide peace of mind for families...",
+                content: "<p>Professional home nursing services offer numerous benefits for elderly patients who require ongoing care. With personalized attention in the comfort of their own homes, seniors can maintain their independence while receiving the medical support they need.</p><p>Home nursing provides one-on-one care that is tailored to each individual's specific needs. This personalized approach ensures that all medical requirements are met while also addressing emotional and social needs.</p><p>For families, home nursing offers peace of mind knowing that their loved ones are being cared for by qualified professionals. This eliminates the stress of worrying about medication schedules, mobility assistance, and emergency situations.</p>"
+            },
+            {
+                id: 2,
+                title: "Understanding Diabetes Management at Home",
+                author: "Dr. Ali Raza",
+                date: "Aug 10, 2025",
+                category: "Healthcare",
+                image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                excerpt: "Learn practical strategies for managing diabetes effectively with home healthcare support and monitoring techniques...",
+                content: "<p>Diabetes management at home requires a comprehensive approach that includes monitoring blood sugar levels, maintaining a healthy diet, regular exercise, and medication management. With the right support system, individuals with diabetes can effectively manage their condition and prevent complications.</p><p>Home healthcare professionals play a crucial role in diabetes management by providing education on proper nutrition, teaching blood glucose monitoring techniques, and assisting with insulin administration when needed.</p><p>Regular monitoring and follow-up care at home can significantly reduce hospital visits and improve overall quality of life for diabetic patients.</p>"
+            },
+            {
+                id: 3,
+                title: "Post-Surgery Recovery: The Role of Home Care",
+                author: "Dr. Fatima Ahmed",
+                date: "Aug 5, 2025",
+                category: "Healthcare",
+                image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+                excerpt: "How professional home care services can accelerate recovery after surgery and reduce the risk of complications...",
+                content: "<p>Post-surgery recovery at home with professional care has been shown to accelerate healing and reduce the risk of complications. Home care nurses provide essential services that ensure a smooth transition from hospital to home.</p><p>Key aspects of post-surgery home care include wound care and dressing changes, medication management, physical therapy support, and monitoring for signs of infection or other complications.</p><p>Patients recovering at home often experience less stress and better sleep, which contributes to faster healing. The personalized attention from home care professionals also ensures that recovery protocols are followed precisely.</p>"
+            }
+        ];
+
+        // Initialize the blog when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            renderBlogPosts();
+            setupEventListeners();
+        });
+
+        // Render blog posts on the blog page
+        function renderBlogPosts() {
+            const blogContainer = document.getElementById('blog-posts-container');
+            blogContainer.innerHTML = '';
+            
+            blogPosts.slice(0, 3).forEach(post => {
+                const blogCard = document.createElement('div');
+                blogCard.className = 'blog-card';
+                blogCard.innerHTML = `
+                    <div class="blog-image" style="background-image: url('${post.image}')"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> ${post.date}</span>
+                            <span><i class="far fa-user"></i> ${post.author}</span>
+                        </div>
+                        <h3>${post.title}</h3>
+                        <p class="blog-excerpt">${post.excerpt}</p>
+                        <a href="#" class="read-more" data-id="${post.id}">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                `;
+                blogContainer.appendChild(blogCard);
+            });
+        }
+
+        // Setup event listeners for blog management
+        function setupEventListeners() {
+            // Manage Blog button
+            document.getElementById('manage-blog').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('blog-management').style.display = 'block';
+                document.getElementById('blog-section').style.display = 'none';
+                document.getElementById('blog-post-view').style.display = 'none';
+                renderBlogList();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Back to Blog button
+            document.getElementById('back-to-blog').addEventListener('click', function() {
+                document.getElementById('blog-management').style.display = 'none';
+                document.getElementById('blog-section').style.display = 'block';
+                document.getElementById('blog-post-view').style.display = 'none';
+                window.scrollTo({ top: document.getElementById('blog-section').offsetTop, behavior: 'smooth' });
+            });
+
+            // Tab switching
+            document.querySelectorAll('.tab-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    document.querySelectorAll('.tab-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(`${tabId}-tab`).classList.add('active');
+                });
+            });
+
+            // Blog form submission
+            document.getElementById('blog-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                createBlogPost();
+            });
+
+            // Read More links
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('read-more')) {
+                    e.preventDefault();
+                    const postId = parseInt(e.target.getAttribute('data-id'));
+                    showBlogPost(postId);
+                }
+                
+                if (e.target.classList.contains('view-post-btn')) {
+                    e.preventDefault();
+                    const postId = parseInt(e.target.getAttribute('data-id'));
+                    showBlogPost(postId);
+                }
+                
+                if (e.target.classList.contains('edit-btn')) {
+                    e.preventDefault();
+                    const postId = parseInt(e.target.getAttribute('data-id'));
+                    editBlogPost(postId);
+                }
+                
+                if (e.target.classList.contains('delete-btn')) {
+                    e.preventDefault();
+                    const postId = parseInt(e.target.getAttribute('data-id'));
+                    deleteBlogPost(postId);
+                }
+            });
+
+            // Back to blog list from post view
+            document.addEventListener('click', function(e) {
+                if (e.target.id === 'back-to-blog-list') {
+                    document.getElementById('blog-post-view').style.display = 'none';
+                    document.getElementById('blog-section').style.display = 'block';
+                    window.scrollTo({ top: document.getElementById('blog-section').offsetTop, behavior: 'smooth' });
+                }
+            });
+        }
+
+        // Create a new blog post
+        function createBlogPost() {
+            const title = document.getElementById('blog-title').value;
+            const author = document.getElementById('blog-author').value;
+            const image = document.getElementById('blog-image').value || 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80';
+            const category = document.getElementById('blog-category').value;
+            const excerpt = document.getElementById('blog-excerpt').value;
+            const content = document.getElementById('blog-content').value;
+            
+            const newPost = {
+                id: Date.now(),
+                title,
+                author,
+                date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+                image,
+                category,
+                excerpt,
+                content
+            };
+            
+            blogPosts.unshift(newPost);
+            saveBlogPosts();
+            
+            // Reset form
+            document.getElementById('blog-form').reset();
+            
+            // Show success message
+            alert('Blog post published successfully!');
+            
+            // Switch to manage tab
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector('[data-tab="manage"]').classList.add('active');
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            document.getElementById('manage-tab').classList.add('active');
+            
+            // Update blog list
+            renderBlogList();
+        }
+
+        // Render blog list in management section
+        function renderBlogList() {
+            const blogList = document.getElementById('blog-list');
+            blogList.innerHTML = '';
+            
+            blogPosts.forEach(post => {
+                const blogItem = document.createElement('li');
+                blogItem.className = 'blog-item';
+                blogItem.innerHTML = `
+                    <div>
+                        <h4>${post.title}</h4>
+                        <p>${post.date} | ${post.author}</p>
+                    </div>
+                    <div class="blog-item-actions">
+                        <button class="action-btn view-post-btn" data-id="${post.id}">View</button>
+                        <button class="action-btn edit-btn" data-id="${post.id}">Edit</button>
+                        <button class="action-btn delete-btn" data-id="${post.id}">Delete</button>
+                    </div>
+                `;
+                blogList.appendChild(blogItem);
+            });
+        }
+
+        // Show full blog post
+        function showBlogPost(postId) {
+            const post = blogPosts.find(p => p.id === postId);
+            if (!post) return;
+            
+            const blogContainer = document.getElementById('blog-post-container');
+            blogContainer.innerHTML = `
+                <div class="blog-post-header">
+                    <h2 class="blog-post-title">${post.title}</h2>
+                    <div class="blog-post-meta">
+                        <span><i class="far fa-user"></i> ${post.author}</span>
+                        <span><i class="far fa-calendar"></i> ${post.date}</span>
+                        <span><i class="far fa-folder"></i> ${post.category}</span>
+                    </div>
+                </div>
+                <div class="blog-post-image" style="background-image: url('${post.image}')"></div>
+                <div class="blog-post-content">${post.content}</div>
+                <a href="#" id="back-to-blog-list" class="back-to-blog"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+            `;
+            
+            document.getElementById('blog-post-view').style.display = 'block';
+            document.getElementById('blog-section').style.display = 'none';
+            document.getElementById('blog-management').style.display = 'none';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Edit blog post
+        function editBlogPost(postId) {
+            const post = blogPosts.find(p => p.id === postId);
+            if (!post) return;
+            
+            // Switch to create tab
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector('[data-tab="create"]').classList.add('active');
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            document.getElementById('create-tab').classList.add('active');
+            
+            // Fill form with post data
+            document.getElementById('blog-title').value = post.title;
+            document.getElementById('blog-author').value = post.author;
+            document.getElementById('blog-image').value = post.image;
+            document.getElementById('blog-category').value = post.category;
+            document.getElementById('blog-excerpt').value = post.excerpt;
+            document.getElementById('blog-content').value = post.content;
+            
+            // Add hidden field to track editing
+            const existingIdField = document.getElementById('edit-post-id');
+            if (existingIdField) existingIdField.remove();
+            
+            const idField = document.createElement('input');
+            idField.type = 'hidden';
+            idField.id = 'edit-post-id';
+            idField.value = post.id;
+            document.getElementById('blog-form').appendChild(idField);
+            
+            // Change button text
+            document.querySelector('#blog-form button').textContent = 'Update Blog Post';
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Delete blog post
+        function deleteBlogPost(postId) {
+            if (confirm('Are you sure you want to delete this blog post?')) {
+                blogPosts = blogPosts.filter(post => post.id !== postId);
+                saveBlogPosts();
+                renderBlogList();
+            }
+        }
+
+        // Save blog posts to localStorage
+        function saveBlogPosts() {
+            localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
+        }
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1695,30 +2226,6 @@
             alert('Thank you for your registration! Our team will review your application and contact you shortly.');
         });
 
-        // Service hover effect enhancement
-        const services = document.querySelectorAll('.service');
-        services.forEach(service => {
-            service.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px)';
-            });
-            
-            service.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-        });
-        
-        // Nurse card hover effect
-        const nurseCards = document.querySelectorAll('.nurse-card');
-        nurseCards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-        });
-        
         // Health Tools Functionality
         // BMI Calculator
         document.getElementById('calculate-bmi').addEventListener('click', function() {
