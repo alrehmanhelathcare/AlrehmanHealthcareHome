@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="bJ0aDRsz9oGYVs3PxnUNxugiIAmVR0Ot1PAaevoY6xc">
-    <title>Al-Rehman HealthCare | Home Medical Services</title>
+    <meta name="description" content="Professional home healthcare services in Karachi - Nursing, Doctor Visits, Physiotherapy, Injection & IV services. Book now for quality care at your doorstep.">
+    <meta name="keywords" content="home nursing Karachi, medical care Karachi, best nurse in Karachi, injection service at home Karachi, doctor visit at home Karachi, physiotherapy at home Karachi, healthcare services Karachi, BMI calculator online, calorie calculator free, symptom checker online, health blog posts">
+    <title>Al-Rehman HealthCare | Professional Home Medical Services in Karachi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -344,7 +346,7 @@
             text-align: center;
         }
 
-        /* Nurse Section */
+        /* Nurses Section */
         #nurses {
             padding: 80px 0;
             background-color: #f0f8ff;
@@ -674,6 +676,157 @@
             opacity: 0.9;
         }
 
+        /* Health Tools Section */
+        #health-tools {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .tools-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .tool-header {
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+        }
+
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .tool-body {
+            padding: 20px;
+        }
+
+        .tool-body h3 {
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .calculator {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .calculator label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .calculator input, .calculator select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .calculator button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: 600;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: var(--primary-light);
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            text-align: center;
+            display: none;
+        }
+
+        /* Blog Section */
+        #blog-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .blog-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 10px;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .blog-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+
+        .blog-excerpt {
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+
+        .read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
         /* Footer */
         footer {
             background: var(--primary-dark);
@@ -846,7 +999,7 @@
     <header>
         <div class="container header-content">
             <div class="logo-container">
-                <img src="https://i.ibb.co/m5Ncw3GD/IMG-20250806-174930-346.webp" alt="Al-Rehman HealthCare Logo">
+                <img src="https://i.ibb.co/m5Ncw3GD/IMG-20250806-174930-346.webp" alt="Al-Rehman HealthCare Logo - Professional Home Medical Services in Karachi">
                 <div class="logo-text">
                     <h1>Al-Rehman HealthCare</h1>
                     <p>Home Medical Services</p>
@@ -856,6 +1009,8 @@
                 <a href="#hero"><i class="fas fa-home"></i> Home</a>
                 <a href="#services"><i class="fas fa-stethoscope"></i> Services</a>
                 <a href="#nurses"><i class="fas fa-user-nurse"></i> Nurses</a>
+                <a href="#health-tools"><i class="fas fa-tools"></i> Health Tools</a>
+                <a href="#blog-section"><i class="fas fa-blog"></i> Blog</a>
                 <a href="#staff-registration"><i class="fas fa-user-plus"></i> Staff Registration</a>
                 <a href="#contact"><i class="fas fa-phone-alt"></i> Contact</a>
                 <a href="#form"><i class="fas fa-calendar-check"></i> Book Service</a>
@@ -977,6 +1132,158 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Tools Section -->
+    <section id="health-tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>Free Health Calculators</h2>
+                <p>Use our health tools to monitor and improve your well-being</p>
+            </div>
+            <div class="tools-container">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">
+                            <i class="fas fa-weight-scale"></i>
+                        </div>
+                        <h3>BMI Calculator</h3>
+                    </div>
+                    <div class="tool-body">
+                        <p>Calculate your Body Mass Index to understand your weight status.</p>
+                        <div class="calculator">
+                            <label for="height">Height (cm)</label>
+                            <input type="number" id="height" placeholder="Enter height in cm">
+                            
+                            <label for="weight">Weight (kg)</label>
+                            <input type="number" id="weight" placeholder="Enter weight in kg">
+                            
+                            <button id="calculate-bmi">Calculate BMI</button>
+                            <div class="result" id="bmi-result"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h3>Calorie Calculator</h3>
+                    </div>
+                    <div class="tool-body">
+                        <p>Calculate your daily calorie needs based on your activity level.</p>
+                        <div class="calculator">
+                            <label for="gender">Gender</label>
+                            <select id="gender">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                            
+                            <label for="age">Age</label>
+                            <input type="number" id="age" placeholder="Your age">
+                            
+                            <label for="cal-weight">Weight (kg)</label>
+                            <input type="number" id="cal-weight" placeholder="Enter weight in kg">
+                            
+                            <label for="activity">Activity Level</label>
+                            <select id="activity">
+                                <option value="1.2">Sedentary (little or no exercise)</option>
+                                <option value="1.375">Lightly active (light exercise 1-3 days/week)</option>
+                                <option value="1.55">Moderately active (moderate exercise 3-5 days/week)</option>
+                                <option value="1.725">Very active (hard exercise 6-7 days/week)</option>
+                                <option value="1.9">Extra active (very hard exercise & physical job)</option>
+                            </select>
+                            
+                            <button id="calculate-calories">Calculate Calories</button>
+                            <div class="result" id="calorie-result"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">
+                            <i class="fas fa-heart-pulse"></i>
+                        </div>
+                        <h3>Symptom Checker</h3>
+                    </div>
+                    <div class="tool-body">
+                        <p>Check your symptoms to get preliminary health information.</p>
+                        <div class="calculator">
+                            <label for="symptoms">Select your symptoms:</label>
+                            <select id="symptoms" multiple size="5">
+                                <option value="fever">Fever</option>
+                                <option value="cough">Cough</option>
+                                <option value="headache">Headache</option>
+                                <option value="fatigue">Fatigue</option>
+                                <option value="nausea">Nausea</option>
+                                <option value="dizziness">Dizziness</option>
+                                <option value="chest_pain">Chest Pain</option>
+                                <option value="shortness">Shortness of Breath</option>
+                            </select>
+                            <small>Hold Ctrl/Cmd to select multiple</small>
+                            
+                            <button id="check-symptoms">Check Symptoms</button>
+                            <div class="result" id="symptom-result"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Health & Wellness Blog</h2>
+                <p>Read our latest articles on health, wellness, and medical care</p>
+            </div>
+            <div class="blog-posts">
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Aug 15, 2025</span>
+                            <span><i class="far fa-user"></i> Dr. Ayesha Khan</span>
+                        </div>
+                        <h3>Benefits of Home Nursing for Elderly Care</h3>
+                        <p class="blog-excerpt">Discover how professional home nursing can improve quality of life for elderly patients and provide peace of mind for families...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Aug 10, 2025</span>
+                            <span><i class="far fa-user"></i> Dr. Ali Raza</span>
+                        </div>
+                        <h3>Understanding Diabetes Management at Home</h3>
+                        <p class="blog-excerpt">Learn practical strategies for managing diabetes effectively with home healthcare support and monitoring techniques...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Aug 5, 2025</span>
+                            <span><i class="far fa-user"></i> Dr. Fatima Ahmed</span>
+                        </div>
+                        <h3>Post-Surgery Recovery: The Role of Home Care</h3>
+                        <p class="blog-excerpt">How professional home care services can accelerate recovery after surgery and reduce the risk of complications...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" class="btn btn-primary">View All Blog Posts</a>
             </div>
         </div>
     </section>
@@ -1186,7 +1493,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="logo-container">
-                        <img src="https://i.ibb.co/m5Ncw3GD/IMG-20250806-174930-346.webp" alt="Al-Rehman HealthCare Logo" style="height: 70px;">
+                        <img src="https://i.ibb.co/m5Ncw3GD/IMG-20250806-174930-346.webp" alt="Al-Rehman HealthCare Logo - Karachi Home Healthcare Services" style="height: 70px;">
                         <div class="logo-text">
                             <h3 style="color: white;">Al-Rehman HealthCare</h3>
                         </div>
@@ -1204,6 +1511,8 @@
                         <li><a href="#hero"><i class="fas fa-chevron-right"></i> Home</a></li>
                         <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
                         <li><a href="#nurses"><i class="fas fa-chevron-right"></i> Nurses</a></li>
+                        <li><a href="#health-tools"><i class="fas fa-chevron-right"></i> Health Tools</a></li>
+                        <li><a href="#blog-section"><i class="fas fa-chevron-right"></i> Blog</a></li>
                         <li><a href="#staff-registration"><i class="fas fa-chevron-right"></i> Staff Registration</a></li>
                         <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
                         <li><a href="#form"><i class="fas fa-chevron-right"></i> Book Service</a></li>
@@ -1217,6 +1526,7 @@
                         <li><a href="#services"><i class="fas fa-chevron-right"></i> Doctor Visits</a></li>
                         <li><a href="#services"><i class="fas fa-chevron-right"></i> Physiotherapy</a></li>
                         <li><a href="#services"><i class="fas fa-chevron-right"></i> Injection Services</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Patient Attendants</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1407,6 +1717,92 @@
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
             });
+        });
+        
+        // Health Tools Functionality
+        // BMI Calculator
+        document.getElementById('calculate-bmi').addEventListener('click', function() {
+            const height = parseFloat(document.getElementById('height').value);
+            const weight = parseFloat(document.getElementById('weight').value);
+            
+            if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+                alert('Please enter valid height and weight values');
+                return;
+            }
+            
+            const heightInMeters = height / 100;
+            const bmi = weight / (heightInMeters * heightInMeters);
+            let category = '';
+            
+            if (bmi < 18.5) {
+                category = 'Underweight';
+            } else if (bmi < 25) {
+                category = 'Normal weight';
+            } else if (bmi < 30) {
+                category = 'Overweight';
+            } else {
+                category = 'Obese';
+            }
+            
+            const resultDiv = document.getElementById('bmi-result');
+            resultDiv.innerHTML = `Your BMI: ${bmi.toFixed(1)} (${category})`;
+            resultDiv.style.display = 'block';
+        });
+        
+        // Calorie Calculator
+        document.getElementById('calculate-calories').addEventListener('click', function() {
+            const gender = document.getElementById('gender').value;
+            const age = parseInt(document.getElementById('age').value);
+            const weight = parseFloat(document.getElementById('cal-weight').value);
+            const activity = parseFloat(document.getElementById('activity').value);
+            
+            if (isNaN(age) || isNaN(weight) || age <= 0 || weight <= 0) {
+                alert('Please enter valid age and weight values');
+                return;
+            }
+            
+            let bmr;
+            if (gender === 'male') {
+                bmr = 10 * weight + 6.25 * 180 - 5 * age + 5; // Using fixed height for simplicity
+            } else {
+                bmr = 10 * weight + 6.25 * 180 - 5 * age - 161;
+            }
+            
+            const calories = bmr * activity;
+            
+            const resultDiv = document.getElementById('calorie-result');
+            resultDiv.innerHTML = `Daily Calorie Needs: ${Math.round(calories)} calories`;
+            resultDiv.style.display = 'block';
+        });
+        
+        // Symptom Checker
+        document.getElementById('check-symptoms').addEventListener('click', function() {
+            const symptoms = Array.from(document.getElementById('symptoms').selectedOptions)
+                .map(option => option.value);
+            
+            if (symptoms.length === 0) {
+                alert('Please select at least one symptom');
+                return;
+            }
+            
+            const possibleConditions = {
+                'fever,cough': 'Possible flu or common cold',
+                'fever,headache': 'Possible viral infection or migraine',
+                'nausea,fatigue': 'Possible stomach virus or food poisoning',
+                'chest_pain,shortness': 'Seek immediate medical attention',
+                'dizziness,fatigue': 'Possible dehydration or low blood pressure'
+            };
+            
+            let condition = 'Based on your symptoms, we recommend consulting with a healthcare professional.';
+            const symptomKey = symptoms.sort().join(',');
+            
+            if (possibleConditions[symptomKey]) {
+                condition = possibleConditions[symptomKey];
+            }
+            
+            const resultDiv = document.getElementById('symptom-result');
+            resultDiv.innerHTML = condition;
+            resultDiv.style.display = 'block';
         });
     </script>
 </body>
