@@ -6,6 +6,7 @@
     <title>Al-Rehman HealthCare | Karachi Home Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #00695C;
@@ -32,6 +33,7 @@
             background-color: var(--light);
             color: var(--dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
@@ -39,6 +41,38 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* Urdu Notification Bar */
+        .urdu-notification {
+            background: linear-gradient(to right, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 12px 0;
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .urdu-text {
+            display: inline-block;
+            padding-left: 100%;
+            white-space: nowrap;
+            animation: marquee 25s linear infinite;
+        }
+
+        .urdu-text span {
+            color: var(--secondary);
+            font-weight: 700;
+            margin: 0 10px;
+        }
+
+        @keyframes marquee {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
         }
 
         /* Header Styles */
@@ -309,6 +343,73 @@
             text-align: center;
         }
 
+        /* Nurse Section */
+        #nurses {
+            padding: 80px 0;
+            background-color: #f0f8ff;
+        }
+
+        .nurses-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .nurse-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            width: 100%;
+            max-width: 350px;
+            transition: var(--transition);
+        }
+
+        .nurse-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .nurse-header {
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+        }
+
+        .nurse-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .nurse-body {
+            padding: 20px;
+        }
+
+        .nurse-body ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .nurse-body li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+        }
+
+        .nurse-body li:last-child {
+            border-bottom: none;
+        }
+
+        .nurse-body li i {
+            color: var(--primary);
+            margin-right: 10px;
+            width: 20px;
+        }
+
         /* Contact Section */
         #contact {
             padding: 80px 0;
@@ -463,6 +564,81 @@
             opacity: 0.9;
         }
 
+        /* Testimonials */
+        #testimonials {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .testimonials-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--primary-light);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial p {
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .client-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .client-details h4 {
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+
+        .client-details p {
+            margin: 0;
+            color: var(--gray);
+            font-style: normal;
+            font-size: 0.9rem;
+        }
+
         /* Footer */
         footer {
             background: var(--primary-dark);
@@ -553,6 +729,10 @@
             .hero h2 {
                 font-size: 2.3rem;
             }
+            
+            .urdu-notification {
+                font-size: 1.2rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -582,6 +762,10 @@
             .contact-container {
                 flex-direction: column;
             }
+            
+            .urdu-notification {
+                font-size: 1rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -601,10 +785,22 @@
             .form-container {
                 padding: 25px;
             }
+            
+            .urdu-notification {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Urdu Notification Bar -->
+    <div class="urdu-notification">
+        <div class="urdu-text">
+            انجیکشن، ڈرپ، کینولا گھر پر لگوانے کے لیئے نیچے دیئے گئے نمبر پر رابطہ کریں: <span>0311-4228593</span> | 
+            Injection, Drip, Cannula services available at home. Call now: <span>0311-4228593</span>
+        </div>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container header-content">
@@ -618,6 +814,7 @@
             <nav>
                 <a href="#hero"><i class="fas fa-home"></i> Home</a>
                 <a href="#services"><i class="fas fa-stethoscope"></i> Services</a>
+                <a href="#nurses"><i class="fas fa-user-nurse"></i> Nurses</a>
                 <a href="#contact"><i class="fas fa-phone-alt"></i> Contact</a>
                 <a href="#form"><i class="fas fa-calendar-check"></i> Book Service</a>
             </nav>
@@ -654,14 +851,6 @@
                 <div class="service">
                     <div class="karachi-badge">Karachi</div>
                     <div class="service-icon">
-                        <i class="fas fa-user-nurse"></i>
-                    </div>
-                    <h3>Home Nursing</h3>
-                    <p>Professional male & female nurses providing personalized care in the comfort of your home.</p>
-                </div>
-                <div class="service">
-                    <div class="karachi-badge">Karachi</div>
-                    <div class="service-icon">
                         <i class="fas fa-user-md"></i>
                     </div>
                     <h3>Doctor Visits</h3>
@@ -682,6 +871,111 @@
                     </div>
                     <h3>Patient Attendants</h3>
                     <p>Compassionate and trained caregivers for elderly and special needs patients.</p>
+                </div>
+                <div class="service">
+                    <div class="karachi-badge">Karachi</div>
+                    <div class="service-icon">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                    <h3>Injection & IV Services</h3>
+                    <p>Professional injection, drip, and cannula services at your home.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nurses Section -->
+    <section id="nurses">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Nursing Services</h2>
+                <p>Male and female nurses available for home care across Karachi</p>
+            </div>
+            <div class="nurses-container">
+                <div class="nurse-card">
+                    <div class="nurse-header">
+                        <div class="nurse-icon">
+                            <i class="fas fa-male"></i>
+                        </div>
+                        <h3>Male Nurses</h3>
+                    </div>
+                    <div class="nurse-body">
+                        <p>Our professional male nurses provide expert medical care in the comfort of your home.</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Injection & IV administration</li>
+                            <li><i class="fas fa-check-circle"></i> Wound care & dressing</li>
+                            <li><i class="fas fa-check-circle"></i> Vital signs monitoring</li>
+                            <li><i class="fas fa-check-circle"></i> Medication management</li>
+                            <li><i class="fas fa-check-circle"></i> Post-operative care</li>
+                        </ul>
+                        <a href="#form" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-calendar-check"></i> Book Male Nurse
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nurse-card">
+                    <div class="nurse-header">
+                        <div class="nurse-icon">
+                            <i class="fas fa-female"></i>
+                        </div>
+                        <h3>Female Nurses</h3>
+                    </div>
+                    <div class="nurse-body">
+                        <p>Our compassionate female nurses provide personalized care with professionalism.</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Injection & IV services</li>
+                            <li><i class="fas fa-check-circle"></i> Elderly care</li>
+                            <li><i class="fas fa-check-circle"></i> Maternal & newborn care</li>
+                            <li><i class="fas fa-check-circle"></i> Chronic disease management</li>
+                            <li><i class="fas fa-check-circle"></i> Health education</li>
+                        </ul>
+                        <a href="#form" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-calendar-check"></i> Book Female Nurse
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container testimonials-container">
+            <div class="section-title">
+                <h2>Patient Testimonials</h2>
+                <p>Hear from our satisfied patients in Karachi</p>
+            </div>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>"The male nurse provided exceptional care for my father. His professionalism and expertise in injections and IVs made the recovery process much easier."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">AA</div>
+                        <div class="client-details">
+                            <h4>Ahmed Ali</h4>
+                            <p>Gulshan-e-Iqbal, Karachi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"The female nurse was wonderful with my mother. She was patient, kind, and highly skilled in wound care and medication management."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">SZ</div>
+                        <div class="client-details">
+                            <h4>Sara Zaidi</h4>
+                            <p>DHA, Karachi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"The injection service at home was a lifesaver when I couldn't visit the clinic. Professional and punctual service with proper hygiene standards."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">MK</div>
+                        <div class="client-details">
+                            <h4>Mohsin Khan</h4>
+                            <p>North Nazimabad, Karachi</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -762,11 +1056,12 @@
                         <label for="service">Required Service</label>
                         <select id="service" name="service" required>
                             <option value="">Select a Service</option>
-                            <option value="nursing">Home Nursing</option>
+                            <option value="male_nurse">Male Nurse</option>
+                            <option value="female_nurse">Female Nurse</option>
                             <option value="doctor">Doctor Visit</option>
                             <option value="physio">Physiotherapy</option>
                             <option value="attendant">Patient Attendant</option>
-                            <option value="other">Other Service</option>
+                            <option value="injection">Injection/IV Service</option>
                         </select>
                     </div>
                     <button type="submit">Request Service Now</button>
@@ -799,6 +1094,7 @@
                     <ul class="footer-links">
                         <li><a href="#hero"><i class="fas fa-chevron-right"></i> Home</a></li>
                         <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#nurses"><i class="fas fa-chevron-right"></i> Nurses</a></li>
                         <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
                         <li><a href="#form"><i class="fas fa-chevron-right"></i> Book Service</a></li>
                     </ul>
@@ -806,10 +1102,11 @@
                 <div class="footer-column">
                     <h3>Our Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Home Nursing Care</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Doctor Home Visits</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Male Nurses</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Female Nurses</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Doctor Visits</a></li>
                         <li><a href="#"><i class="fas fa-chevron-right"></i> Physiotherapy</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Patient Attendants</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Injection Services</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -874,7 +1171,11 @@
             }
             
             // If validation passes
-            alert('Thank you for your booking request! Our Karachi team will contact you shortly to confirm your appointment.');
+            alert('Thank you for your booking request!\n\nName: ' + nameInput.value + 
+                  '\nPhone: ' + phoneInput.value + 
+                  '\nAddress: ' + addressInput.value + 
+                  '\nService: ' + serviceInput.options[serviceInput.selectedIndex].text + 
+                  '\n\nOur Karachi team will contact you shortly to confirm your appointment.');
             bookingForm.reset();
         });
 
@@ -886,6 +1187,18 @@
             });
             
             service.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Nurse card hover effect
+        const nurseCards = document.querySelectorAll('.nurse-card');
+        nurseCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
             });
         });
