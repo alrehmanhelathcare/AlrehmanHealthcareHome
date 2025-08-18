@@ -59,6 +59,7 @@
             overflow: hidden;
             position: relative;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
         }
 
         .urdu-text {
@@ -79,6 +80,116 @@
             100% { transform: translateX(-100%); }
         }
 
+        /* Image Slider Section */
+        .slider-section {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            background: #004D40;
+        }
+        
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .slider {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s ease-in-out;
+        }
+        
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .slide-content {
+            background: rgba(0, 77, 64, 0.85);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 700px;
+            text-align: center;
+            color: white;
+            margin: 0 30px;
+        }
+        
+        .slide-content h3 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #FF7D47;
+        }
+        
+        .slide-content p {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .slider-controls {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 10;
+        }
+        
+        .slider-dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .slider-dot.active {
+            background-color: #FF7D47;
+            transform: scale(1.3);
+        }
+        
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 105, 92, 0.7);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .slider-btn:hover {
+            background: var(--primary);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .slider-btn.prev {
+            left: 30px;
+        }
+        
+        .slider-btn.next {
+            right: 30px;
+        }
+        
         /* Mobile Navigation */
         .mobile-header {
             background: linear-gradient(135deg, var(--primary-dark), var(--primary));
@@ -845,6 +956,18 @@
             .btn {
                 min-width: 250px;
             }
+            
+            .slider-section {
+                height: 400px;
+            }
+            
+            .slide-content h3 {
+                font-size: 2.4rem;
+            }
+            
+            .slide-content p {
+                font-size: 1.2rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -890,6 +1013,33 @@
             
             .btn {
                 width: 100%;
+            }
+            
+            .slider-section {
+                height: 350px;
+            }
+            
+            .slide-content {
+                padding: 25px;
+                margin: 0 15px;
+            }
+            
+            .slide-content h3 {
+                font-size: 2rem;
+            }
+            
+            .slider-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .slider-btn.prev {
+                left: 15px;
+            }
+            
+            .slider-btn.next {
+                right: 15px;
             }
         }
 
@@ -995,6 +1145,23 @@
             .footer-links a {
                 font-size: 1.1rem;
             }
+            
+            .slider-section {
+                height: 300px;
+            }
+            
+            .slide-content h3 {
+                font-size: 1.7rem;
+            }
+            
+            .slide-content p {
+                font-size: 1rem;
+            }
+            
+            .slider-dot {
+                width: 12px;
+                height: 12px;
+            }
         }
     </style>
 </head>
@@ -1006,6 +1173,56 @@
             Injection, Drips, Cannula, Feeding Tube, Urinary Catheter services available at home. Call now: <span>0311 4228593</span>
         </div>
     </div>
+    
+    <!-- New Image Slider Section -->
+    <section class="slider-section">
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1581595219316-5e4d9a4d3b8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                    <div class="slide-content">
+                        <h3>Professional Home Healthcare</h3>
+                        <p>Experienced medical professionals at your doorstep across Karachi</p>
+                    </div>
+                </div>
+                
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                    <div class="slide-content">
+                        <h3>24/7 Nursing Services</h3>
+                        <p>Male and female nurses available round the clock for home care</p>
+                    </div>
+                </div>
+                
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                    <div class="slide-content">
+                        <h3>Specialized Medical Treatments</h3>
+                        <p>Injection, IV, and physiotherapy services at your home</p>
+                    </div>
+                </div>
+                
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1581595219316-5e4d9a4d3b8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                    <div class="slide-content">
+                        <h3>Patient Attendant Services</h3>
+                        <p>Compassionate care for elderly and special needs patients</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider-btn prev">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            
+            <div class="slider-btn next">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+            
+            <div class="slider-controls">
+                <div class="slider-dot active"></div>
+                <div class="slider-dot"></div>
+                <div class="slider-dot"></div>
+                <div class="slider-dot"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- Mobile Header -->
     <div class="mobile-header">
@@ -1604,6 +1821,57 @@
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
             });
+        });
+        
+        // New Slider Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.slider');
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.slider-dot');
+            const prevBtn = document.querySelector('.slider-btn.prev');
+            const nextBtn = document.querySelector('.slider-btn.next');
+            
+            let currentSlide = 0;
+            const slideCount = slides.length;
+            
+            // Function to update slider position
+            function goToSlide(slideIndex) {
+                slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+                currentSlide = slideIndex;
+                
+                // Update active dot
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+            
+            // Next slide function
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slideCount;
+                goToSlide(currentSlide);
+            }
+            
+            // Previous slide function
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+                goToSlide(currentSlide);
+            }
+            
+            // Add click event to next button
+            nextBtn.addEventListener('click', nextSlide);
+            
+            // Add click event to previous button
+            prevBtn.addEventListener('click', prevSlide);
+            
+            // Add click event to dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                });
+            });
+            
+            // Auto slide every 5 seconds
+            setInterval(nextSlide, 5000);
         });
     </script>
 </body>
