@@ -1,0 +1,38 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "index.html"
+        fields:
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Description", name: "hero_description", widget: "text" }
+          - { label: "Location Tag", name: "location_tag", widget: "string" }
+          - { label: "Trusted Banner Text", name: "trusted_text", widget: "text" }
+          - { label: "Services Title", name: "services_title", widget: "string" }
+          - { label: "Services Description", name: "services_desc", widget: "text" }
+          - { label: "Nurses Title", name: "nurses_title", widget: "string" }
+          - { label: "Nurses Description", name: "nurses_desc", widget: "text" }
+          - { label: "Staff Title", name: "staff_title", widget: "string" }
+          - { label: "Staff Description", name: "staff_desc", widget: "text" }
+          - { label: "Testimonials Title", name: "testimonials_title", widget: "string" }
+          - { label: "Testimonials Description", name: "testimonials_desc", widget: "text" }
+          - { label: "Contact Title", name: "contact_title", widget: "string" }
+          - { label: "Contact Description", name: "contact_desc", widget: "text" }
+          - { label: "Form Title", name: "form_title", widget: "string" }
+
+  - name: "slider"
+    label: "Slider Images"
+    folder: "images/slider"
+    create: true
+    fields:
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Alt Text", name: "alt", widget: "string" }
