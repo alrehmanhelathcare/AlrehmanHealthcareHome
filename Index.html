@@ -331,11 +331,13 @@
         .slides {
             display: flex;
             transition: transform 0.5s ease;
+            width: 300%; /* 3 slides, so 300% width */
         }
 
         .slide {
-            min-width: 100%;
+            width: 33.333%; /* Each slide takes 1/3 of the container */
             position: relative;
+            flex-shrink: 0;
         }
 
         .slide img {
@@ -373,6 +375,7 @@
             justify-content: space-between;
             transform: translateY(-50%);
             padding: 0 20px;
+            z-index: 10;
         }
 
         .slider-nav button {
@@ -1161,28 +1164,28 @@
         </div>
     </section>
 
-    <!-- Image Slider -->
+    <!-- Image Slider with Medical-focused Images -->
     <div class="container">
         <div class="image-slider">
             <div class="slides">
                 <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Doctor providing home healthcare service">
+                    <img src="https://images.unsplash.com/photo-1584824486539-53bb4646bdbc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Medical equipment and supplies">
                     <div class="slide-content">
-                        <h3>Professional Home Healthcare</h3>
-                        <p>Experienced medical professionals providing quality care in the comfort of your home</p>
+                        <h3>Professional Medical Equipment</h3>
+                        <p>We use only the highest quality medical equipment for all our home healthcare services</p>
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1584614375600-ca0638f21602?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Nurse assisting elderly patient">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Medicine and medical supplies">
                     <div class="slide-content">
-                        <h3>Elderly Care Services</h3>
-                        <p>Compassionate care for senior citizens with specialized attention to their needs</p>
+                        <h3>Comprehensive Medication Management</h3>
+                        <p>Our healthcare professionals ensure proper medication administration and management</p>
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Physiotherapy session at home">
+                    <img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Physiotherapy equipment">
                     <div class="slide-content">
-                        <h3>Home Physiotherapy</h3>
+                        <h3>Advanced Physiotherapy Services</h3>
                         <p>Professional rehabilitation services delivered at your doorstep by certified therapists</p>
                     </div>
                 </div>
@@ -1510,7 +1513,7 @@
             });
         });
 
-        // Image Slider Functionality
+        // Image Slider Functionality - Fixed
         const slides = document.querySelector('.slides');
         const slideItems = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.dot');
@@ -1518,10 +1521,11 @@
         const nextBtn = document.querySelector('.next');
         let currentSlide = 0;
         const slideCount = slideItems.length;
+        let slideInterval;
 
         // Set initial slide position
         function setSlidePosition() {
-            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+            slides.style.transform = `translateX(-${currentSlide * (100 / slideCount)}%)`;
             
             // Update dots
             dots.forEach((dot, index) => {
@@ -1542,19 +1546,38 @@
         }
 
         // Add event listeners
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', function() {
+            nextSlide();
+            resetSlideInterval();
+        });
+        
+        prevBtn.addEventListener('click', function() {
+            prevSlide();
+            resetSlideInterval();
+        });
 
         // Add click events to dots
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 currentSlide = index;
                 setSlidePosition();
+                resetSlideInterval();
             });
         });
 
         // Auto slide every 5 seconds
-        setInterval(nextSlide, 5000);
+        function startSlideInterval() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+        
+        function resetSlideInterval() {
+            clearInterval(slideInterval);
+            startSlideInterval();
+        }
+        
+        // Initialize the slider
+        setSlidePosition();
+        startSlideInterval();
 
         // Booking Form Handling
         const bookingForm = document.getElementById('bookingForm');
