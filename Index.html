@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Al-Rehman HealthCare | Professional Home Medical Services</title>
-    <meta name="description" content="Al-Rehman HealthCare provides professional home medical services in Karachi. 24/7 availability of doctors, nurses, physiotherapists and medical attendants.">
-    <meta name="keywords" content="home healthcare, medical services, doctor home visit, Karachi, physiotherapy, nursing care, patient attendant">
+    <meta name="description" content="Al-Rehman HealthCare provides professional home medical services in Karachi. 24/7 availability of doctors, nurses, physiotherapists and medical attendants. کراچی میں ہوم میڈیکل سروسز، ہوم نرسنگ سروس، گھر پر انجیکشن سروس">
+    <meta name="keywords" content="home healthcare, medical services, doctor home visit, Karachi, physiotherapy, nursing care, patient attendant, ہوم ہیلتھ کیئر, ہوم نرسنگ سروس, کراچی, گھر پر ڈاکٹر, فزیو تھیراپی, انجیکشن ایٹ ہوم">
     <meta name="author" content="Al-Rehman HealthCare">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -48,9 +48,9 @@
             padding: 0 20px;
         }
 
-        /* Scrolling Dua Notification Bar */
+        /* Scrolling Dua Notification Bar - Improved Design */
         .dua-notification {
-            background: linear-gradient(to right, #1a5e50, #2c7744);
+            background: linear-gradient(to right, var(--primary-dark), var(--primary));
             color: white;
             padding: 15px 0;
             overflow: hidden;
@@ -58,6 +58,7 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             z-index: 1001;
             font-family: 'Noto Nastaliq Urdu', serif;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
         }
 
         .dua-container {
@@ -71,6 +72,7 @@
             display: flex;
             flex-direction: column;
             margin-right: 60px;
+            padding: 5px 0;
         }
 
         .arabic-dua {
@@ -78,6 +80,8 @@
             font-weight: 600;
             padding: 0 20px;
             text-align: right;
+            color: #ffffff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         .english-translation {
@@ -87,6 +91,7 @@
             text-align: center;
             opacity: 0.9;
             margin-top: 5px;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         @keyframes marquee {
@@ -114,14 +119,14 @@
         }
 
         .logo-container img {
-            height: 90px; /* Increased logo size */
+            height: 90px;
             border-radius: 50%;
             border: 3px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         .logo-text h1 {
-            font-size: 2rem; /* Increased font size */
+            font-size: 2rem;
             color: white;
             margin-bottom: 5px;
         }
@@ -173,7 +178,7 @@
         }
 
         .mobile-logo img {
-            height: 90px; /* Increased logo size */
+            height: 90px;
             border-radius: 50%;
             border: 3px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -311,6 +316,100 @@
         .btn-secondary:hover {
             background-color: rgba(255, 255, 255, 0.1);
             transform: translateY(-3px);
+        }
+
+        /* Image Slider */
+        .image-slider {
+            margin: 60px auto;
+            max-width: 1200px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            display: block;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 30px;
+        }
+
+        .slide-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .slide-content p {
+            font-size: 1.3rem;
+            max-width: 600px;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 20px;
+        }
+
+        .slider-nav button {
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-nav button:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--gray);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
         }
 
         /* Trusted Banner */
@@ -775,6 +874,18 @@
             .logo-container img {
                 height: 80px;
             }
+            
+            .slide img {
+                height: 400px;
+            }
+            
+            .slide-content h3 {
+                font-size: 1.8rem;
+            }
+            
+            .slide-content p {
+                font-size: 1.1rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -832,6 +943,16 @@
             
             .mobile-logo img {
                 height: 70px;
+            }
+            
+            .slide img {
+                height: 350px;
+            }
+            
+            .slider-nav button {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
             }
         }
 
@@ -928,11 +1049,35 @@
             .logo-container img {
                 height: 70px;
             }
+            
+            .slide img {
+                height: 300px;
+            }
+            
+            .slide-content {
+                padding: 15px;
+            }
+            
+            .slide-content h3 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+            
+            .slide-content p {
+                font-size: 1rem;
+            }
+            
+            .slider-nav button {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+                padding: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Scrolling Dua Notification Bar -->
+    <!-- Scrolling Dua Notification Bar - Improved Design -->
     <div class="dua-notification">
         <div class="dua-container">
             <div class="dua-content">
@@ -992,8 +1137,8 @@
             <a href="#services"><i class="fas fa-stethoscope"></i> Services</a>
             <a href="#booking"><i class="fas fa-calendar-check"></i> Book Service</a>
             <a href="#staff-registration"><i class="fas fa-user-plus"></i> Join Our Team</a>
-            <a href="#testimonials"><i class="fas fa-comments"></i> Testimonials</a>
             <a href="#contact"><i class="fas fa-phone-alt"></i> Contact</a>
+            <!-- Testimonials removed from mobile menu as requested -->
         </div>
     </div>
 
@@ -1015,6 +1160,44 @@
             </div>
         </div>
     </section>
+
+    <!-- Image Slider -->
+    <div class="container">
+        <div class="image-slider">
+            <div class="slides">
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Doctor providing home healthcare service">
+                    <div class="slide-content">
+                        <h3>Professional Home Healthcare</h3>
+                        <p>Experienced medical professionals providing quality care in the comfort of your home</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1584614375600-ca0638f21602?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Nurse assisting elderly patient">
+                    <div class="slide-content">
+                        <h3>Elderly Care Services</h3>
+                        <p>Compassionate care for senior citizens with specialized attention to their needs</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Physiotherapy session at home">
+                    <div class="slide-content">
+                        <h3>Home Physiotherapy</h3>
+                        <p>Professional rehabilitation services delivered at your doorstep by certified therapists</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-nav">
+                <button class="prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
 
     <!-- Trusted Banner -->
     <div class="container">
@@ -1326,6 +1509,52 @@
                 });
             });
         });
+
+        // Image Slider Functionality
+        const slides = document.querySelector('.slides');
+        const slideItems = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        let currentSlide = 0;
+        const slideCount = slideItems.length;
+
+        // Set initial slide position
+        function setSlidePosition() {
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // Go to next slide
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slideCount;
+            setSlidePosition();
+        }
+
+        // Go to previous slide
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+            setSlidePosition();
+        }
+
+        // Add event listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Add click events to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                setSlidePosition();
+            });
+        });
+
+        // Auto slide every 5 seconds
+        setInterval(nextSlide, 5000);
 
         // Booking Form Handling
         const bookingForm = document.getElementById('bookingForm');
